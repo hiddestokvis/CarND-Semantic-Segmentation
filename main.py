@@ -108,7 +108,7 @@ def train_nn(sess, epochs, batch_size, get_batches_fn, train_op, cross_entropy_l
                 input_image: image,
                 correct_label: label,
                 keep_prob: keep_prob,
-                learning_rate: learning_rate
+                learning_rate: 0.001
             })
             print("EPOCH %d OUT OF %d LOSS: %f" % (epoch, epochs, loss));
     pass
