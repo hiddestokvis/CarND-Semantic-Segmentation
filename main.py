@@ -104,7 +104,7 @@ def train_nn(sess, epochs, batch_size, get_batches_fn, train_op, cross_entropy_l
     # TODO: Implement function
     for epoch in range(epochs):
         for image, label in get_batches_fn(batch_size):
-            _, loss = sess.run([train_op, cross_entropy_loss], feed_dict={ input_image: image, correct_label: label, keep_prob: 0.5, learning_rate: 0.001 })
+            _, loss = sess.run([train_op, cross_entropy_loss], feed_dict={ input_image: image, correct_label: label, keep_prob: 0.5, learning_rate: 0.0009 })
             print("EPOCH {}".format(epoch + 1))
             print("OUT OF {} EPOCHS".format(epochs))
             print("LOSS {:.3f}".format(loss))
@@ -129,7 +129,7 @@ def run():
     #  https://www.cityscapes-dataset.com/
     #
     epochs = 40
-    batch_size = 20
+    batch_size = 5
 
     with tf.Session() as sess:
         # Path to vgg model
